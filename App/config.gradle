@@ -1,5 +1,12 @@
 ext {
+
+    isModule=false
+    moduleBlueTooth=true
+    modulePlayer=false
+    moduleLockScreen=false
+
     android = [
+            applicationId:'com.android.app',
             compileSdkVersion: 26,
             minSdkVersion    : 18,
             targetSdkVersion : 26,
