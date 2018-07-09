@@ -9,11 +9,14 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.android.applockscreen.adpter.MyAdapter;
 import com.android.applockscreen.utils.BitmapUtil;
 import com.android.applockscreen.utils.BlurBitmapUtil;
 import com.android.applockscreen.view.BlurredView;
+import com.conch.appbase.utils.RouteUtils;
 
+@Route(path = RouteUtils.User_LOCK_SCREEN)
 public class LockActivity extends AppCompatActivity {
     private BlurredView blurredView;
     private RecyclerView recyclerView;

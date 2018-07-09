@@ -10,10 +10,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.server.BookController;
+import com.conch.appbase.activity.BaseActivity;
+import com.conch.appbase.event.MessageEvent;
+import com.conch.appbase.utils.RouteUtils;
 
-public class MainActivity extends AppCompatActivity {
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
+
+public class MainActivity extends BaseActivity {
 
     // Used to load the 'native-lib' library on application startup.
     static {
@@ -67,8 +74,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void startLock() {
-//        Intent intent = new Intent(MainActivity.this, LockActivity.class);
-//        startActivity(intent);
+        RouteUtils.startLockScrenActivity();
     }
 
     private void aidl() {
@@ -112,6 +118,15 @@ public class MainActivity extends AppCompatActivity {
     public boolean onTouchEvent(MotionEvent event) {
         Logs.print("MainActivity触发onTouchEvent>>>>");
         return super.onTouchEvent(event);
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onMessageEvent(MessageEvent event) {
+        if (event != null) {
+            Toast.makeText(MainActivity.this, event.name, Toast.LENGTH_SHORT)
+                    .show();
+        }
+
     }
 
     /**

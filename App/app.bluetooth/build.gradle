@@ -1,6 +1,6 @@
-if(Boolean.valueOf(rootProject.ext.android.moduleBlueTooth)){
+if (Boolean.valueOf(rootProject.ext.moduleBlueTooth)) {
     apply plugin: 'com.android.application'
-}else{
+} else {
     apply plugin: 'com.android.library'
 }
 
@@ -25,13 +25,13 @@ android {
         }
     }
 
-    sourceSets{
-        main{
-            if(rootProject.ext.android.moduleBlueTooth){
+    sourceSets {
+        main {
+            if (rootProject.ext.moduleBlueTooth) {
                 manifest.srcFile 'src/main/module/AndroidManifest.xml'
-            }else{
+            } else {
                 manifest.srcFile 'src/main/AndroidManifest.xml'
-                java{
+                java {
                     exclude '*module'
                 }
             }
