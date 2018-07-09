@@ -16,6 +16,12 @@ android {
 
         testInstrumentationRunner rootProject.ext.android.testInstrumentationRunner
 
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+            }
+        }
+
     }
 
     buildTypes {
@@ -51,4 +57,7 @@ dependencies {
     implementation rootProject.ext.dependencies.rxandroid
     implementation rootProject.ext.dependencies.rxjava
     implementation rootProject.ext.dependencies.rxpermissions
+
+    api project(':app.base')
+    annotationProcessor rootProject.ext.dependencies.arouter_compiler
 }

@@ -14,9 +14,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.bluetooth.callback.IScanCallBack;
 import com.bluetooth.le.Xble;
 import com.bluetooth.utils.Params;
+import com.conch.appbase.utils.ModuleRouteService;
+import com.conch.appbase.utils.RouteUtils;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 
 import java.util.List;
@@ -28,6 +31,7 @@ import io.reactivex.disposables.Disposable;
  * 蓝牙
  * 在6.0设备需要开启android.permission.ACCESS_COARSE_LOCATION以及GPS
  */
+@Route(path = RouteUtils.User_BLUE_TOOTH)
 public class BlueToothActivity extends AppCompatActivity {
     private static final int REQUEST_CODE_LOCATION_SETTINGS = 2;
 
@@ -40,6 +44,10 @@ public class BlueToothActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         handleBLE();
+                        //模块间通信-服务调用，未直接引用lockscreen module,确使用lockscreen中数据
+//                        String msg = ModuleRouteService.getUserAddress("");
+//                        Toast.makeText(BlueToothActivity.this,
+//                                msg, Toast.LENGTH_SHORT).show();
                     }
                 });
     }

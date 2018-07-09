@@ -94,6 +94,8 @@ dependencies {
 
     if (!rootProject.ext.isModule) {
         implementation project(':app.lockscreen')
+        implementation project(':app.bluetooth')
     }
+
 
 }

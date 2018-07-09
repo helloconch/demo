@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.android.server.BookController;
 import com.conch.appbase.activity.BaseActivity;
 import com.conch.appbase.event.MessageEvent;
+import com.conch.appbase.utils.ModuleRouteService;
 import com.conch.appbase.utils.RouteUtils;
 
 import org.greenrobot.eventbus.Subscribe;
@@ -90,8 +91,7 @@ public class MainActivity extends BaseActivity {
     }
 
     private void bltooth() {
-//        Intent intent = new Intent(MainActivity.this, BlueToothActivity.class);
-//        startActivity(intent);
+        RouteUtils.startBlueToothActivity();
     }
 
     private void bindServer() {
