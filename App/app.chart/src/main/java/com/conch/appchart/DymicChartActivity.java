@@ -28,10 +28,11 @@ import com.github.mikephil.charting.listener.OnChartGestureListener;
 import java.util.ArrayList;
 import java.util.List;
 
-@Route(path = RouteUtils.CHART_MAIN)
-public class ChartActivity extends AppCompatActivity implements OnChartGestureListener {
+@Route(path = RouteUtils.CHART_DYMIC_MAIN)
+public class DymicChartActivity extends AppCompatActivity implements OnChartGestureListener {
     private final String TAG = "CHARTCHAA";
     private int len = 30;
+    private int hideSpace = 6;
     LineChart chart;
 
     @Override
@@ -53,7 +54,7 @@ public class ChartActivity extends AppCompatActivity implements OnChartGestureLi
         //chart.setDrawBorders(true);
         List<Entry> entries = new ArrayList<>();
         for (int i = 1; i < len; i++) {
-            float x = i;
+            float x = i + (i - 1) * hideSpace;
             float y = (float) Math.random() * 80;
             entries.add(new Entry(x, y));
         }
@@ -87,7 +88,12 @@ public class ChartActivity extends AppCompatActivity implements OnChartGestureLi
             @Override
             public String getFormattedValue(float value, AxisBase axis) {
                 Log.i(TAG, "getFormattedValue>>>" + value);
-                return String.valueOf((int) (value)) + "日";
+//                if ((value + hideSpace) % (hideSpace + 1) == 0) {
+//                    return String.valueOf((int) (value + hideSpace) / (hideSpace + 1)) + "日";
+//                } else {
+//                    return (int) ((value + hideSpace) % (hideSpace + 1)) + "点";
+//                }
+                return String.valueOf((int) (value + hideSpace) / (hideSpace + 1)) + "日";
             }
         });
 
