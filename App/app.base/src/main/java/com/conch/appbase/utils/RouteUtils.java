@@ -10,6 +10,9 @@ public class RouteUtils {
     public static final String USER_PLAYER = "/player/video";
     public static final String FIND_FRANGMENT_MAIN = "/find/main";
 
+    public static final String CHART_MAIN = "/chart/main";
+    public static final String CHART_LINE_MAIN = "/chart/line/main";
+
     public static final String LOCK_SERVICE = "/lock/service";
 
     public static Fragment getFindFragment() {
@@ -29,5 +32,13 @@ public class RouteUtils {
 
     public static void startLockScrenActivity() {
         ARouter.getInstance().build(User_LOCK_SCREEN).navigation();
+    }
+
+    public static void startLineChartActivity() {
+        ARouter.getInstance().build(CHART_LINE_MAIN).navigation();
+    }
+
+    public static void startChartActivity() {
+        ARouter.getInstance().build(CHART_MAIN).navigation();
     }
 }

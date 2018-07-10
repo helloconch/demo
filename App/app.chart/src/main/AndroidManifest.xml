@@ -1,0 +1,8 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.conch.appchart">
+
+    <application>
+        <activity android:name=".ChartActivity" />
+        <activity android:name=".LineCharActivity"/>
+    </application>
+</manifest>

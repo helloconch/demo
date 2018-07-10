@@ -67,6 +67,8 @@ public class MainActivity extends BaseActivity {
                 bltooth();
             }
         });
+        //RouteUtils.startLineChartActivity();
+        RouteUtils.startChartActivity();
     }
 
     private void startPlayer() {
