@@ -3,6 +3,7 @@
 
     <application>
         <activity android:name=".ChartActivity" />
+        <activity android:name=".Line2ChartActivity" />
         <activity android:name=".LineCharActivity" />
         <activity android:name=".DymicChartActivity" />
     </application>

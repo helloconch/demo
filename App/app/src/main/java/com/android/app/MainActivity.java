@@ -68,7 +68,7 @@ public class MainActivity extends BaseActivity {
             }
         });
         //RouteUtils.startLineChartActivity();
-        RouteUtils.startDymicChartActivity();
+        RouteUtils.startChart2Activity();
         //RouteUtils.startChartActivity();
     }
 

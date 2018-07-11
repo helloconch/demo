@@ -28,6 +28,9 @@ import com.github.mikephil.charting.listener.OnChartGestureListener;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * <a href="https://blog.csdn.net/ww897532167/article/details/74139843"></a>
+ */
 @Route(path = RouteUtils.CHART_MAIN)
 public class ChartActivity extends AppCompatActivity implements OnChartGestureListener {
     private final String TAG = "CHARTCHAA";

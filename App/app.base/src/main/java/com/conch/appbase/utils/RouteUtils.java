@@ -13,6 +13,7 @@ public class RouteUtils {
     public static final String CHART_MAIN = "/chart/main";
     public static final String CHART_DYMIC_MAIN = "/chart/dymic/main";
     public static final String CHART_LINE_MAIN = "/chart/line/main";
+    public static final String CHART_LINE2_MAIN = "/chart/line2/main";
 
     public static final String LOCK_SERVICE = "/lock/service";
 
@@ -41,6 +42,10 @@ public class RouteUtils {
 
     public static void startChartActivity() {
         ARouter.getInstance().build(CHART_MAIN).navigation();
+    }
+
+    public static void startChart2Activity() {
+        ARouter.getInstance().build(CHART_LINE2_MAIN).navigation();
     }
 
     public static void startDymicChartActivity() {
