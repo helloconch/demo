@@ -75,6 +75,9 @@ android {
             path "CMakeLists.txt"
         }
     }
+    dataBinding {
+        enabled = true
+    }
 }
 
 def buildTime() {
@@ -93,9 +96,10 @@ dependencies {
     implementation rootProject.ext.dependencies.annotations
 
     if (!rootProject.ext.isModule) {
-        implementation project(':app.lockscreen')
-        implementation project(':app.bluetooth')
-        implementation project(':app.chart')
+//        implementation project(':app.lockscreen')
+//        implementation project(':app.bluetooth')
+//        implementation project(':app.chart')
+        implementation project(':app.mvp')
     }
 
 

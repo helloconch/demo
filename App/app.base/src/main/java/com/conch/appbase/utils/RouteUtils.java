@@ -17,6 +17,8 @@ public class RouteUtils {
 
     public static final String LOCK_SERVICE = "/lock/service";
 
+    public static final String MVP_MAIN = "/mvp/main";
+
     public static Fragment getFindFragment() {
         Fragment fragment = (Fragment) ARouter.getInstance().build(FIND_FRANGMENT_MAIN).navigation();
         return fragment;
@@ -50,5 +52,9 @@ public class RouteUtils {
 
     public static void startDymicChartActivity() {
         ARouter.getInstance().build(CHART_DYMIC_MAIN).navigation();
+    }
+
+    public static void starMvpMActivity() {
+        ARouter.getInstance().build(MVP_MAIN).navigation();
     }
 }
