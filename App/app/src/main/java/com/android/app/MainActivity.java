@@ -6,20 +6,21 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.IBinder;
-import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.Temp;
 import com.android.server.BookController;
 import com.conch.appbase.activity.BaseActivity;
 import com.conch.appbase.event.MessageEvent;
 import com.conch.appbase.utils.ModuleRouteService;
 import com.conch.appbase.utils.RouteUtils;
 
+import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
-import org.greenrobot.eventbus.ThreadMode;
 
 public class MainActivity extends BaseActivity {
 
@@ -51,7 +52,10 @@ public class MainActivity extends BaseActivity {
         findViewById(R.id.lock).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startLock();
+//                startLock();
+
+                Toast.makeText(MainActivity.this,
+                        ModuleRouteService.getUserAddress(""), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -70,12 +74,17 @@ public class MainActivity extends BaseActivity {
         //RouteUtils.startLineChartActivity();
         //RouteUtils.startChart2Activity();
         //RouteUtils.startChartActivity();
-        RouteUtils.starMvpMActivity();
+        // RouteUtils.starMvpMActivity();
     }
 
     private void startPlayer() {
 //        Intent intent = new Intent(MainActivity.this, VideoActivity.class);
 //        startActivity(intent);
+
+        // EventBus.getDefault().post(new MessageEvent(""));
+
+        Temp temp = new Temp();
+        EventBus.getDefault().post(new MessageEvent(""));
     }
 
     private void startLock() {
@@ -124,11 +133,12 @@ public class MainActivity extends BaseActivity {
         return super.onTouchEvent(event);
     }
 
-    @Subscribe(threadMode = ThreadMode.MAIN)
+    @Subscribe
     public void onMessageEvent(MessageEvent event) {
         if (event != null) {
-            Toast.makeText(MainActivity.this, event.name, Toast.LENGTH_SHORT)
-                    .show();
+            Log.i("GUGYGSV", Thread.currentThread().getName());
+//            Toast.makeText(MainActivity.this, event.name, Toast.LENGTH_SHORT)
+//                    .show();
         }
 
     }

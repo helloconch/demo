@@ -369,8 +369,8 @@ public class Xble {
                     //III. 在onCharacteristicChanged回调中收到UUID == TIME_SYNC_UUID的response，则为同步时间成功
 
                     //写数据
-//                    syncWriteTime(gatt, bleGattCharacteristic);
-//                    gatt.setCharacteristicNotification(bleGattCharacteristic, true);
+//                    writeTime(gatt, bleGattCharacteristic);
+                    gatt.setCharacteristicNotification(bleGattCharacteristic, true);
                 } else if (Params.BLE_DEVICE_INFORMATION_OAD_REQUEST_CHARACTERISTIC_UUID.equals(bleGattCharacteristic.getUuid().toString())) {
                     Log.i(TAG, "发送 OAD 请求指令");
 
@@ -383,7 +383,7 @@ public class Xble {
 
     }
 
-    private void syncWriteTime(BluetoothGatt gat, BluetoothGattCharacteristic bleGattCharacteristic) {
+    private void writeTime(BluetoothGatt gat, BluetoothGattCharacteristic bleGattCharacteristic) {
         long time = System.currentTimeMillis();
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
         Date date1 = new Date(time);

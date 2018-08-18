@@ -1,1 +1,1 @@
-include ':app', ':app.lockscreen', ':app.player', ':app.bluetooth', ':app.base', ':app.chart', ':app.mvp'
+include ':app', ':app.lockscreen', ':app.player', ':app.bluetooth', ':app.base', ':app.chart', ':app.mvp', ':app.anim'

@@ -96,10 +96,10 @@ dependencies {
     implementation rootProject.ext.dependencies.annotations
 
     if (!rootProject.ext.isModule) {
-//        implementation project(':app.lockscreen')
-//        implementation project(':app.bluetooth')
+        implementation project(':app.lockscreen')
+        implementation project(':app.bluetooth')
 //        implementation project(':app.chart')
-        implementation project(':app.mvp')
+//        implementation project(':app.mvp')
     }
 
 

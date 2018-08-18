@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.conch.appanim.widget.MyFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/iconPeriod4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/icon_01_period_4"
+        android:visibility="visible" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/icon_01_period_2"
+        android:visibility="visible" />
+
+
+    <ImageView
+        android:id="@+id/iconPeriod3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/icon_01_period_3"
+        android:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/iconPeriod1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/icon_01_period_1"
+        android:visibility="visible" />
+
+</com.conch.appanim.widget.MyFrameLayout>

@@ -43,7 +43,9 @@ public class BlueToothActivity extends AppCompatActivity {
                 .setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        handleBLE();
+                        Toast.makeText(BlueToothActivity.this,
+                                ModuleRouteService.getUserAddress(""), Toast.LENGTH_SHORT).show();
+//                        handleBLE();
                         //模块间通信-服务调用，未直接引用lockscreen module,确使用lockscreen中数据
 //                        String msg = ModuleRouteService.getUserAddress("");
 //                        Toast.makeText(BlueToothActivity.this,

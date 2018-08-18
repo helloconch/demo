@@ -15,6 +15,7 @@ public class RouteUtils {
     public static final String CHART_LINE_MAIN = "/chart/line/main";
     public static final String CHART_LINE2_MAIN = "/chart/line2/main";
 
+
     public static final String LOCK_SERVICE = "/lock/service";
 
     public static final String MVP_MAIN = "/mvp/main";

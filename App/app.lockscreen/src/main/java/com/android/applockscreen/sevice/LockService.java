@@ -10,7 +10,8 @@ import com.conch.appbase.utils.RouteUtils;
 public class LockService implements IUserModuleService {
     @Override
     public String getUserAddress(String userId) {
-        return "来自lockService";
+        //return UserService.getUserAddress(userId);
+        return "AAA";
     }
 
     @Override

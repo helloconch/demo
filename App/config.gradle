@@ -4,6 +4,7 @@ ext {
     moduleBlueTooth = false
     modulePlayer = false
     moduleLockScreen = false
+    moduleAnim = true
 
     android = [
             applicationId            : 'com.android.app',
