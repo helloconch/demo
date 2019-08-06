@@ -1,15 +1,25 @@
-import 'package:demo/tabbox.dart';
+import 'package:demo/imageWidget.dart';
+import 'package:demo/layout.dart';
 import 'package:flutter/material.dart';
-import 'login.dart';
-import 'register.dart';
-import 'words.dart';
-import 'lifecycle.dart';
+import 'package:demo/login.dart';
+import 'package:demo/register.dart';
+import 'package:demo/words.dart';
+import 'package:demo/tabbox.dart';
+import 'package:demo/lifecycle.dart';
+import 'package:demo/textWidget.dart';
+import 'package:demo/buttonWidget.dart';
+import 'package:demo/container.dart';
 
 final loginRouteName = "login";
 final registerRouteName = "register";
 final wordRouteName = "words";
 final lifecycleRouteName = "lifecycle";
 final tabBoxRouteName = "tabBox";
+final textRouteName = "textdemo";
+final buttonRouteName = "buttonDemo";
+final imageRouteName = "imageDemo";
+final layoutRouteName = "layoutDemo";
+final containerRouteName = "containerDemo";
 
 class CalcWidget extends StatelessWidget {
   @override
@@ -23,6 +33,11 @@ class CalcWidget extends StatelessWidget {
         wordRouteName: (context) => WordWidget(),
         lifecycleRouteName: (context) => LifeCycleWidget(),
         tabBoxRouteName: (context) => ParentWidgetC(),
+        textRouteName: (context) => TextDemo(),
+        buttonRouteName: (context) => ButtonDemo(),
+        imageRouteName: (context) => ImageDemo(),
+        layoutRouteName: (context) => LayoutDemo(),
+        containerRouteName: (context) => ContainerDemo(),
       },
       home: new HomePage(
         title: 'HomePage',
@@ -103,6 +118,33 @@ class MyHomepageState extends State<HomePage> {
               onPressed: () {
                 Navigator.pushNamed(context, tabBoxRouteName);
               },
+            ),
+            FlatButton(
+              child: Text('TextWidget'),
+              textColor: Colors.blue,
+              onPressed: () {
+                Navigator.pushNamed(context, textRouteName);
+              },
+            ),
+            FlatButton(
+              child: Text('Button Widget'),
+              textColor: Colors.blue,
+              onPressed: () => Navigator.pushNamed(context, buttonRouteName),
+            ),
+            FlatButton(
+              onPressed: () => Navigator.pushNamed(context, imageRouteName),
+              textColor: Colors.red,
+              child: Text('Image'),
+            ),
+            FlatButton(
+              onPressed: () => Navigator.pushNamed(context, layoutRouteName),
+              textColor: Colors.black,
+              child: Text('Layout'),
+            ),
+            FlatButton(
+              onPressed: () => Navigator.pushNamed(context, containerRouteName),
+              textColor: Colors.black,
+              child: Text('容器类'),
             )
           ],
         ),
