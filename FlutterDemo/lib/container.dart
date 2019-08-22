@@ -7,7 +7,6 @@ class ContainerDemo extends StatelessWidget {
       appBar: AppBar(
         title: Text('容器'),
       ),
-      
       body: PaddingTest(),
     );
   }
@@ -48,7 +47,21 @@ class PaddingTest extends StatelessWidget {
               height: 80.0,
               child: redBox,
             ),
-          )
+          ),
+          BoxDecoratedWidget(),
+          Container(
+            color: Colors.black,
+            child: Transform(
+              alignment: Alignment.topRight,
+              transform: Matrix4.skewY(0.3),
+              child: Container(
+                padding: const EdgeInsets.all(8.0),
+                color: Colors.deepOrange,
+                child: const Text('Apartment for rent !'),
+              ),
+            ),
+          ),
+          TransformDemo()
         ],
       ),
     );
@@ -58,3 +71,40 @@ class PaddingTest extends StatelessWidget {
 Widget redBox = DecoratedBox(
   decoration: BoxDecoration(color: Colors.red),
 );
+
+class BoxDecoratedWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return DecoratedBox(
+      decoration: BoxDecoration(
+          gradient: LinearGradient(colors: [Colors.red, Colors.orange[700]]),
+          borderRadius: BorderRadius.circular(3.0),
+          boxShadow: [
+            BoxShadow(
+                color: Colors.black54,
+                offset: Offset(2.0, 2.0),
+                blurRadius: 4.0)
+          ]),
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 60.0, vertical: 18.0),
+        child: Text('login', style: TextStyle(color: Colors.white)),
+      ),
+    );
+  }
+}
+
+class TransformDemo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.only(top: 5),
+      child: DecoratedBox(
+        decoration: BoxDecoration(color: Colors.red),
+        child: Transform.translate(
+          offset: Offset(-20.0, -5.0),
+          child: Text('Hello world'),
+        ),
+      ),
+    );
+  }
+}

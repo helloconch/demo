@@ -7,7 +7,7 @@ class LayoutDemo extends StatelessWidget {
       appBar: AppBar(
         title: Text('Layout'),
       ),
-      body: StackWidget(),
+      body: AlignWidget(),
     );
   }
 }
@@ -202,6 +202,40 @@ class StackWidget extends StatelessWidget {
           )
         ],
       ),
+    );
+  }
+}
+
+class AlignWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Container(
+          height: 120,
+          width: 120,
+          color: Colors.blue[50],
+          child: Align(
+            alignment: Alignment.topRight,
+            child: FlutterLogo(
+              size: 60,
+            ),
+          ),
+        ),
+        Container(
+          margin: const EdgeInsets.only(top: 20),
+          height: 120,
+          width: 120,
+          color: Colors.blue[50],
+          child: Align(
+            alignment: FractionalOffset(0.2, 0.6),
+            child: FlutterLogo(
+              size: 60,
+            ),
+          ),
+        )
+      ],
     );
   }
 }
