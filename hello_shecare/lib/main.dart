@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
 import './widgets/login.dart';
+import './widgets/shop.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_statusbarcolor/flutter_statusbarcolor.dart';
 
 //void main() => runApp(MyApp());
 void main() async {
   runApp(Login());
   //修改状态栏内容样式dark/light
-  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark);
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
   //修改状态栏背景色
-  await FlutterStatusbarcolor.setStatusBarColor(Colors.green[400]);
-  if (useWhiteForeground(Colors.green[400])) {
-    FlutterStatusbarcolor.setStatusBarWhiteForeground(true);
-  } else {
-    FlutterStatusbarcolor.setStatusBarWhiteForeground(false);
-  }
+  // import 'package:flutter_statusbarcolor/flutter_statusbarcolor.dart';
+  // await FlutterStatusbarcolor.setStatusBarColor(Colors.green[400]);
+  // if (useWhiteForeground(Colors.green[400])) {
+  //   FlutterStatusbarcolor.setStatusBarWhiteForeground(true);
+  // } else {
+  //   FlutterStatusbarcolor.setStatusBarWhiteForeground(false);
+  // }
 }
 
 class MyApp extends StatelessWidget {
