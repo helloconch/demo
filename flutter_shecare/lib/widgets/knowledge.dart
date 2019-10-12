@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
+import 'browser.dart';
+import 'topbar.dart';
 
 final knowledgeUrl =
     'https://knowledge.shecarefertility.com/renderAppKnowledgeMain/';
@@ -7,15 +8,10 @@ final knowledgeUrl =
 class Knowledge extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      routes: {
-        "/": (_) => new WebviewScaffold(
-              url: knowledgeUrl,
-              appBar: new AppBar(
-                title: new Text("Widget webview"),
-              ),
-            ),
-      },
+    return Container(
+      child: Column(
+        children: <Widget>[TopBar(title: '知识'), Browser(url: knowledgeUrl)],
+      ),
     );
   }
 }

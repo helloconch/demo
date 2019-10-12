@@ -29,7 +29,7 @@ class AppPage extends StatefulWidget {
 }
 
 class _AppState extends State<AppPage> {
-  int _selectedIndex = 1;
+  int _selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
