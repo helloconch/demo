@@ -17,7 +17,9 @@ List<Widget> _options = <Widget>[
 class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return AppPage();
+    return MaterialApp(
+      home: AppPage(),
+    );
   }
 }
 

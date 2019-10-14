@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'login.dart';
+part of 'logininfo.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-Login _$LoginFromJson(Map<String, dynamic> json) {
-  return Login()
+Logininfo _$LogininfoFromJson(Map<String, dynamic> json) {
+  return Logininfo()
     ..code = json['code'] as num
     ..message = json['message'] as String
     ..taskVersion = json['taskVersion'] as num
@@ -16,7 +16,7 @@ Login _$LoginFromJson(Map<String, dynamic> json) {
     ..authToken = json['authToken'] as String;
 }
 
-Map<String, dynamic> _$LoginToJson(Login instance) => <String, dynamic>{
+Map<String, dynamic> _$LogininfoToJson(Logininfo instance) => <String, dynamic>{
       'code': instance.code,
       'message': instance.message,
       'taskVersion': instance.taskVersion,
