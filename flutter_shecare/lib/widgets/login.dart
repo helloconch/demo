@@ -1,9 +1,20 @@
+import 'dart:convert';
+
+import 'package:convert/convert.dart';
+import 'package:crypto/crypto.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'colors.dart';
+import 'package:flutter_shecare/common/Global.dart';
+import 'package:flutter_shecare/models/index.dart';
+
 import 'app.dart';
+import 'colors.dart';
 import 'topbar.dart';
+import 'package:toast/toast.dart';
 
 final homeRouteName = "home";
+
+final currentLoginUser = 'currentLoginUser';
 
 class Login extends StatelessWidget {
   @override
@@ -53,6 +64,40 @@ class _LoginPageState extends State<LoginPage> {
     }
   }
 
+  String generateMd5() {
+    var password = _pwdcontroller.text.trim();
+    var content = Utf8Encoder().convert(password);
+    var digest = md5.convert(content);
+    return hex.encode(digest.bytes);
+  }
+
+  void _login() async {
+    String phone = _phonecontroller.text.trim();
+
+    Dio dio = Dio();
+    Response response = await dio.post(
+        'https://api.shecarefertility.com/ThermometerV2/login/login.json',
+        data: {
+          "buildType": 'customer',
+          "emailOrPhone": phone,
+          "password": generateMd5(),
+          "phoneID": ''
+        });
+
+    print('登录返回数据:${response.data.toString()}');
+    var loginInfo = Logininfo.fromJson(response.data);
+    int code = loginInfo.code;
+    if (code == 200) {
+      Global.save(currentLoginUser, phone);
+      Navigator.pushNamedAndRemoveUntil(
+          context, homeRouteName, (route) => route == null);
+    } else {
+      print("loginBean:${loginInfo.code}");
+      Toast.show("账户或密码错误", context,
+          duration: Toast.LENGTH_SHORT, gravity: Toast.BOTTOM);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     double statusBarHeight = MediaQuery.of(context).padding.top;
@@ -85,6 +130,7 @@ class _LoginPageState extends State<LoginPage> {
             child: TextField(
               decoration: InputDecoration(hintText: '手机号'),
               controller: _phonecontroller,
+              keyboardType: TextInputType.number,
             ),
           ),
           Container(
@@ -112,8 +158,7 @@ class _LoginPageState extends State<LoginPage> {
                   _checkPwd();
                   if (_phoneState && _pwdState) {
                     //登录成功
-                    Navigator.pushNamedAndRemoveUntil(
-                        context, homeRouteName, (route) => route == null);
+                    _login();
                   } else {
                     if (!_phoneState) {
                       _checkStr = '请输入11位手机号！';
