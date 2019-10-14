@@ -12,7 +12,6 @@ class Browser extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     double statusBarHeight = MediaQuery.of(context).padding.top;
-    double width = size.width;
     double h = size.height - statusBarHeight - 100;
     return Container(
       height: h,
