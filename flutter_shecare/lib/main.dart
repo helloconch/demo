@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
-import './widgets/login.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_shecare/common/Global.dart';
 import 'package:flutter_statusbarcolor/flutter_statusbarcolor.dart';
+
+import './widgets/login.dart';
+import './widgets/app.dart';
 
 //void main() => runApp(MyApp());
 void main() async {

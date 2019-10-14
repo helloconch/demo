@@ -12,9 +12,7 @@ class Browser extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     double statusBarHeight = MediaQuery.of(context).padding.top;
-    double h = size.height - statusBarHeight - 100;
     return Container(
-      height: h,
       child: WebView(
         initialUrl: url,
         javascriptMode: JavascriptMode.unrestricted,
@@ -23,13 +21,17 @@ class Browser extends StatelessWidget {
         ].toSet(),
         navigationDelegate: (NavigationRequest request) {
           print('blocking navigation to $request}');
-          Navigator.push(context, new MaterialPageRoute(builder: (context) {
-            return PageDetails(
-              url: request.url,
-              title: '知识',
-            );
-          }));
-          return NavigationDecision.prevent;
+          if (request.url != url) {
+            Navigator.push(context, new MaterialPageRoute(builder: (context) {
+              return PageDetails(
+                url: request.url,
+                title: '知识',
+              );
+            }));
+            return NavigationDecision.prevent;
+          } else {
+            return NavigationDecision.navigate;
+          }
         },
       ),
     );
