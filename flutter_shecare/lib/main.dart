@@ -9,6 +9,7 @@ import 'package:flutter_shecare/widgets/file.dart';
 
 //void main() => runApp(MyApp());
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   //修改状态栏内容样式dark/light
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark);
   //修改状态栏背景色

@@ -10,7 +10,12 @@ class Knowledge extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Column(
-        children: <Widget>[TopBar(title: '知识'), Browser(url: knowledgeUrl)],
+        children: <Widget>[
+          TopBar(title: '知识'),
+          Expanded(
+            child: Browser(url: knowledgeUrl),
+          )
+        ],
       ),
     );
   }
