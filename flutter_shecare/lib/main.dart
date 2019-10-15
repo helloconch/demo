@@ -5,6 +5,7 @@ import 'package:flutter_statusbarcolor/flutter_statusbarcolor.dart';
 
 import './widgets/login.dart';
 import './widgets/app.dart';
+import 'package:flutter_shecare/widgets/file.dart';
 
 //void main() => runApp(MyApp());
 void main() async {
