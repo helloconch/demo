@@ -66,7 +66,13 @@ class _FileOperationRouteState extends State<FileOperationRoute> {
         title: Text('文件操作'),
       ),
       body: Center(
-        child: Text('点击:$_counter'),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[Text('点击:$_counter'), Text('hello flutter 2',style: TextStyle(
+            fontSize: 18,
+            color: Colors.deepOrangeAccent
+          ),)],
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
