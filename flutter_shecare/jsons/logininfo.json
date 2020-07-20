@@ -1,8 +1,0 @@
-{
-	"code": 200,
-	"message": "Success",
-	"taskVersion": 10,
-	"versionJson": "{\"deployVersion\":2}",
-	"startVersion": 4,
-	"authToken": "cf5c3346-b81f-47cb-aa7c-fed1813c9b617743"
-}
