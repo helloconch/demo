@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'pages/test_stateful_widget.dart';
 import 'pages/_06/home_page.dart';
+import 'pages/_07/name_game.dart';
+
 
 void main() => runApp(MyApp());
 
@@ -28,10 +30,9 @@ class MyApp extends StatelessWidget {
             title: Text('Time'),
           ),
           body: Center(
-            child: Center(
-             child: HomePage(),
-            )
-          ),
+              child: Center(
+            child: NameGame(),
+          )),
         ));
   }
 }

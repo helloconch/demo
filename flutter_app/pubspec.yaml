@@ -29,6 +29,7 @@ dev_dependencies:
     sdk: flutter
   pedantic: ^1.8.0
   intl: ^0.16.1
+  provider: ^3.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

@@ -3,11 +3,11 @@ import 'package:flutter_app/util/struct/_06/user_info_struct.dart';
 import 'package:flutter_app/util/struct/_06/article_summary_struct.dart';
 import 'package:flutter_app/widgets/_06/article_card.dart';
 import 'package:flutter_app/widgets/common/_06/banner_info.dart';
+
 ///首页列表信息
 ///
 /// 展示banner和帖子信息
-class HomePage extends StatelessWidget{
-
+class HomePage extends StatelessWidget {
   /// banner 地址信息
   final String bannerImage =
       'https://img.089t.com/content/20200227/osbbw9upeelfqnxnwt0glcht.jpg';
@@ -24,12 +24,8 @@ class HomePage extends StatelessWidget{
       20,
       30);
 
-
-
-
   @override
   Widget build(BuildContext context) {
-
     return Container(
       child: Column(
         children: <Widget>[
@@ -42,5 +38,4 @@ class HomePage extends StatelessWidget{
       ),
     );
   }
-
 }
